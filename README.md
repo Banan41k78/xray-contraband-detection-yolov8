@@ -9,9 +9,9 @@ This repository contains the complete research pipeline for contraband detection
 
 | Notebook | Description | Open in Colab |
 |----------|-------------|---------------|
-| **Root Pipeline** | Main pipeline: training, evaluation, visualization & conclusions | [![Open In Colab]([https://colab.research.google.com/assets/colab-badge.svg](https://colab.research.google.com/drive/1PNnd1Z3NGXygrD3EHdVNDNkdMYbm1CfI?usp=sharing))](https://colab.research.google.com/drive/1PNnd1Z3NGXygrD3EHdVNDNkdMYbm1CfI?usp=sharing) |
-| **Data Exploration** | Dataset search, EDA, class analysis, YOLO format conversion | [![Open In Colab]([https://colab.research.google.com/assets/colab-badge.svg](https://colab.research.google.com/drive/1awF_W9cwKyAH5CEG5Zu9eFCqnEh0S0pV?usp=sharing))](https://colab.research.google.com/drive/1awF_W9cwKyAH5CEG5Zu9eFCqnEh0S0pV?usp=sharing) |
-| **Model Experiments** | YOLOv8 training, Focal Loss modification, comparative analysis | [![Open In Colab]([https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mUdqMrityTx9U20FL49f-CqZ5egyWzi4?usp=sharing](https://colab.research.google.com/drive/1mUdqMrityTx9U20FL49f-CqZ5egyWzi4?usp=sharing)) |
+| **Root Pipeline** | Main pipeline: training, evaluation, visualization & conclusions | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1PNnd1Z3NGXygrD3EHdVNDNkdMYbm1CfI?usp=sharing) |
+| **Data Exploration** | Dataset search, EDA, class analysis, YOLO format conversion | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1awF_W9cwKyAH5CEG5Zu9eFCqnEh0S0pV?usp=sharing) |
+| **Model Experiments** | YOLOv8 training, Focal Loss modification, comparative analysis | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mUdqMrityTx9U20FL49f-CqZ5egyWzi4?usp=sharing) |
 
 ---
 
