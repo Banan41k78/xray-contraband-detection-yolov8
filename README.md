@@ -25,3 +25,27 @@ Manual X-ray baggage inspection is:
 **Goal**: Develop an automated detection system for prohibited items on X-ray images using deep learning.
 
 ---
+## Dataset
+
+This project uses a cleaned and curated version of the **PIDray (Prohibited Item Detection ray)** dataset — a large-scale X-ray benchmark introduced at ICCV 2021 for contraband detection in security screening.
+
+### Dataset Summary
+
+| Property | Value |
+|----------|-------|
+| **Source** | PIDray (Wang et al., ICCV 2021) |
+| **Total images** | 47,674 |
+| **Classes** | 12 (guns, knives, tools, handcuffs, etc.) |
+| **Annotation format** | COCO JSON (bounding boxes) |
+| **Splits** | Train (80%), Validation (10%), Test (10%) |
+
+### Repository Contents
+
+- `dataset_split.csv` — Full split table with image-to-set mapping
+- `splits/` — File lists for train/val/test (`train_images.txt`, `val_images.txt`, `test_images.txt`)
+
+### Full Dataset on Kaggle
+
+The complete dataset (images + annotations) is available on Kaggle:
+
+[![Kaggle](https://img.shields.io/badge/Kaggle-XRay%20Contraband%20Detection-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/BANan41k/xray-contraband-detection)
