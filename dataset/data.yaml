@@ -1,0 +1,8 @@
+# YOLO dataset configuration
+path: ./yolo_dataset
+train: ./yolo_dataset/train/images
+val: ./yolo_dataset/val/images
+test: ./yolo_dataset/test/images
+
+nc: 12  # number of classes
+names: ['Baton', 'Pliers', 'Hammer', 'Powerbank', 'Scissors', 'Wrench', 'Gun', 'Bullet', 'Sprayer', 'HandCuffs', 'Knife', 'Lighter']  # class names
