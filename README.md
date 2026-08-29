@@ -46,10 +46,7 @@ This project uses a cleaned and curated version of the **PIDray (Prohibited Item
 
 ### Full Dataset on Kaggle
 
-The complete dataset (images + info) is available on Kaggle:
-
-[![Kaggle](https://img.shields.io/badge/Kaggle-XRay%20Contraband%20Detection-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/BANan41k/xray-contraband-detection)
-
-The complete yolo dataset is available on Kaggle:
-
-[![Kaggle](https://img.shields.io/badge/Kaggle-XRay%20Contraband%20Detection-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)]([https://www.kaggle.com/datasets/BANan41k/xray-contraband-yolo](https://www.kaggle.com/datasets/banan41k/xray-contraband-yolo))
+| Name | Format | Link |
+|----------|--------|--------|
+| X-Ray Contraband Detection | COCO JSON | [Link](https://www.kaggle.com/datasets/BANan41k/xray-contraband-detection) |
+| X-Ray Contraband Detection (YOLO) | YOLO .txt | [Link](https://www.kaggle.com/datasets/BANan41k/xray-contraband-yolo) |
