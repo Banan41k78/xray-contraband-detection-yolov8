@@ -1,6 +1,6 @@
 """
-Пайплайн для модели классификации/детекции рентген-снимков.
-Скачивает веса с Google Drive и выполняет инференс.
+Pipeline for the X-ray classification/detection model.
+Downloads weights from Google Drive and runs inference.
 """
 import os
 from pathlib import Path
@@ -9,8 +9,8 @@ HERE = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd(
 # Скачиваем модель
 if "installer.py" not in os.listdir(HERE):
   raise EnvironmentError(
-        "[!] Установщик не найден.\n"
-        "    Скачайте installer.py из репозитория: "
+        "[!] Installer not found.\n"
+        "    Download installer.py from the repository: "
         "https://github.com/Banan41k78/xray-contraband-detection-yolov8"
     )
   
@@ -29,16 +29,16 @@ OUTPUT_DIR = Path(BASE_DIR) / "predictions"
 
 
 def load_model() -> YOLO:
-    """загружает модель YOLO."""
-    print(f"[i] Загружаю модель: {MODEL_PATH}")
+    """Download weights (if needed) and load the YOLO model."""
+    print(f"[i] Loading model: {MODEL_PATH}")
     return YOLO(MODEL_PATH)
 
-# Инференс 
+# Inference 
 def predict(model: YOLO, source: str,save = True):
   """
-  model - YOLO модель,
-  source - путь к файлу/папке/url,
-  save - булевый флаг сохранять/не сохранять.
+   model  — YOLO model,
+   source — path to a file / folder / URL,
+   save   — whether to save the annotated visualization.
   """
   OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
   return model.predict(source=source,
@@ -48,15 +48,15 @@ def predict(model: YOLO, source: str,save = True):
                        exist_ok=True,
                        verbose=True,)
 
-# Краткая сводка по предсказаниям
+# Prints a short prediction summary and returns a list of dicts
 def summarize(results, verbose: bool = True):
     """
-    Для каждой картинки:
-      - при детекции  → список объектов с классом, уверенностью и bbox
-      - при классификации → топ-1 класс и вероятность
+    For each image:
+      - detection     → list of objects with class, confidence, bbox
+      - classification → top-1 class and probability
 
-    results — список объектов Results из ultralytics.
-    verbose — печатать ли отчёт в stdout.
+    results — list of Results objects from ultralytics.
+    verbose — whether to print the report to stdout.
     """
     summary = []
 
@@ -64,7 +64,7 @@ def summarize(results, verbose: bool = True):
         path = str(getattr(r, "path", "?"))
         entry = {"path": path, "detections": [], "classification": None}
 
-        # Детекция
+        # Detection
         boxes = getattr(r, "boxes", None)
         if boxes is not None and len(boxes) > 0:
             for box in boxes:
@@ -77,7 +77,7 @@ def summarize(results, verbose: bool = True):
                     "bbox": xyxy,
                 })
 
-        # Классификация
+        # Classification
         probs = getattr(r, "probs", None)
         if probs is not None:
             entry["classification"] = {
@@ -87,7 +87,7 @@ def summarize(results, verbose: bool = True):
 
         summary.append(entry)
 
-        # Печать
+        # Print
         if verbose:
             print(f"\n=== {path} ===")
             if entry["detections"]:
@@ -99,7 +99,7 @@ def summarize(results, verbose: bool = True):
             else:
                 print("  (ничего не найдено)")
 
-    # Итоговая сводка
+    # Overall summary
     if verbose and len(summary) > 1:
         total = sum(len(e["detections"]) for e in summary)
         print(f"\n[i] Обработано изображений: {len(summary)}")
@@ -110,4 +110,4 @@ def summarize(results, verbose: bool = True):
     model = load_model()
     results = predict(model, sys.argv[1])
     summarize(results)
-    print(f"\n[+] Результаты в: {OUTPUT_DIR.resolve()}")
+    print(f"\n[+] Results saved to: {OUTPUT_DIR.resolve()}")
