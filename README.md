@@ -58,3 +58,5 @@ The trained YOLOv8 weights (~130 MB) are available on Google Drive:
 **[Download model.pt](https://drive.google.com/file/d/1UZx4Ifx-TjpYz4gplzk5Ao-vkMH3mSWM/view?usp=sharing)**
 
 The `installer.py` script downloads them automatically — see **Quick Start** below. Weights are cached locally in `xray-classification/model.pt` and are not re-downloaded on subsequent runs.
+
+> **Please, read and check PREREQUISITES.md**
