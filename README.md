@@ -50,3 +50,11 @@ This project uses a cleaned and curated version of the **PIDray (Prohibited Item
 |----------|--------|--------|
 | X-Ray Contraband Detection | COCO JSON | [Link](https://www.kaggle.com/datasets/BANan41k/xray-contraband-detection) |
 | X-Ray Contraband Detection (YOLO) | YOLO .txt | [Link](https://www.kaggle.com/datasets/BANan41k/xray-contraband-yolo) |
+
+## Pretrained Model Weights
+
+The trained YOLOv8 weights (~130 MB) are available on Google Drive:
+
+**[Download model.pt](https://drive.google.com/file/d/1UZx4Ifx-TjpYz4gplzk5Ao-vkMH3mSWM/view?usp=sharing)**
+
+The `installer.py` script downloads them automatically — see **Quick Start** below. Weights are cached locally in `xray-classification/model.pt` and are not re-downloaded on subsequent runs.
