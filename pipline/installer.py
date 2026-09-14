@@ -5,12 +5,12 @@ BASE_DIR = "xray-classification"
 MODEL_ID = "1UZx4Ifx-TjpYz4gplzk5Ao-vkMH3mSWM"
 MODEL_PATH = os.path.join(BASE_DIR, "model.pt")
 
-# Создаём папку (не упадёт, если уже есть)
+# Create the folder (won't fail if it already exists)
 if not os.path.exists(BASE_DIR):
   os.makedirs(BASE_DIR, exist_ok=True)
   print(f"[+] Папка готова: {BASE_DIR}")
 
-# Скачиваем модель, если её ещё нет
+# Download the model if it is not there yet
 if os.path.exists(MODEL_PATH):
     print(f"[!] Модель скачана: {MODEL_PATH}")
 else:
